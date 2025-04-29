@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réponses aux questions &mdash; Documentation Neural_Networks_TP3 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=05dadb3a"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="tp3_pkg" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neural_Networks_TP3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tp3_pkg.html">tp3_pkg package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">tp3_pkg</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Réponses aux questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#developpement-d-un-reseau-de-neurones-de-a-a-z">Développement d’un réseau de neurones de A à Z :</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-d-une-librairie-dediee-tensorflow-keras">Utilisation d’une librairie dédiée : Tensorflow - Keras :</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neural_Networks_TP3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Réponses aux questions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/rep.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reponses-aux-questions">
+<h1>Réponses aux questions<a class="headerlink" href="#reponses-aux-questions" title="Lien vers cette rubrique"></a></h1>
+<section id="developpement-d-un-reseau-de-neurones-de-a-a-z">
+<h2>Développement d’un réseau de neurones de A à Z :<a class="headerlink" href="#developpement-d-un-reseau-de-neurones-de-a-a-z" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Il y a 42000 images dans le data set MNIST qui nous est fourni sur moodle (train.csv) pour entraîner notre réseau de neurones.</p></li>
+<li><p>Il y a 785 valeurs dans la deuxième dimension du tableau, car il y a 784 valeurs pour chaque pixel de l’image (28x28), et un label permettant de connaître la valeur du chiffre écrit.</p></li>
+<li><p>La valeur du succès après 100 itérations pour un taux d’apprentissage de 1 est d’environ 80%.</p></li>
+<li><p>La valeur du succès après un deuxième entraînement de 100 itérations pour un taux d’apprentissage de 0.1 est d’environ 86%.</p></li>
+</ol>
+<img alt="Graphique du taux de succès de l'entraînement 1 en fonction des itérations." src="_images/Numpy.png" />
+<p>Il nous semble que le réseau est sous-entraîné après ces deux entraînements. Nous avons donc opté pour un entraînement longue durée avec 300 itérations pour chacun des entraînements. Nous sommes arrivés à 90% de succès après le premier entraînement, et le résultat de validation après le deuxième entraînement était de 90.4%.</p>
+</section>
+<section id="utilisation-d-une-librairie-dediee-tensorflow-keras">
+<h2>Utilisation d’une librairie dédiée : Tensorflow - Keras :<a class="headerlink" href="#utilisation-d-une-librairie-dediee-tensorflow-keras" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic simple">
+<li><p>Le dictionnaire <code class="docutils literal notranslate"><span class="pre">out.history</span></code> enregistre l’évolution des différentes métriques au cours de chaque époque. Les principales clés de ce dictionnaire sont :</p></li>
+</ol>
+<p><strong>``loss``</strong> : La perte (fonction de coût) calculée à chaque époque.
+<strong>``accuracy``</strong> (ou <code class="docutils literal notranslate"><span class="pre">acc</span></code> dans les versions antérieures de TensorFlow) : L’exactitude du modèle (ou toute autre métrique définie) à chaque époque.
+<strong>``val_loss``</strong> : La perte calculée sur les données de validation, si un jeu de validation est spécifié.
+<strong>``val_accuracy``</strong> (ou <code class="docutils literal notranslate"><span class="pre">val_acc</span></code> dans les versions antérieures de TensorFlow) : L’exactitude calculée sur les données de validation, si un jeu de validation est spécifié.</p>
+<ol class="arabic">
+<li><p>Le taux de succès pour un réseau de neurones avec 1 couche cachée de 10 neurones, et un taux d’apprentissage de 0.01 est de 92%.</p></li>
+<li><p>Il semble qu’après 300 itérations, le taux de succès a effectivement convergé, comme on peut le voir sur le graphique ci-dessous :</p>
+<img alt="Graphique du taux de succès de l'entraînement 1 en fonction des itérations." src="_images/Keras1.png" />
+</li>
+<li><p>Le taux de succès atteint pour le second entraînement (même architecture de réseau, taux d’apprentissage = 0.2), est inférieur : nous arrivons, après 300 itérations, à 85% de détection maximale. Et comme nous pouvons le voir sur le graphique suivant, le taux de succès n’est pas stabilisé.</p>
+<img alt="Graphique du taux de succès de l'entraînement 2 en fonction des itérations." src="_images/Keras2.png" />
+</li>
+<li><p>Lorsque l’on augmente significativement le nombre de neurones dans la couche cachée, le taux de succès arrive autour de 90%. Comme nous avons gardé un taux d’apprentissage de 0.2, ce résultat est meilleur que pour une couche cachée de 10 neurones. De plus, le taux de succès semble avoir convergé, et est plus stable également.</p>
+<img alt="Graphique du taux de succès de l'entraînement 3 en fonction des itérations." src="_images/Keras3.png" />
+</li>
+<li><p>Le taux de succès dans le cas où nous avons un réseau de neurones avec 2 couches cachées (une de 500 et une de 700) donne un résultat surprenant. En effet, le taux de succès stagne autour de 25%.</p>
+<img alt="Graphique du taux de succès de l'entraînement 4 en fonction des itérations." src="_images/Keras4.png" />
+</li>
+<li><p>Comme on peut le voir sur le graphique ci-dessous, lorsque l’on divise la taille de l’échantillon par 10, la fonction de perte devient nulle très rapidement (lors des premières itérations).</p>
+<img alt="Graphique du taux de succès de l'entraînement 5 en fonction des itérations." src="_images/Keras5.png" />
+</li>
+</ol>
+<p>Nous sommes surpris de voir que des réseaux de neurones plus complexes (avec plus de couches) ne permettent pas une meilleure détection. Voire même dans les derniers cas, avec deux couches cachées, les résultats étaient bien pires, et à peine mieux que le hasard. Nous supposons que cela est lié à une forme de surentraînement des réseaux.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="modules.html" class="btn btn-neutral float-left" title="tp3_pkg" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Dimitri Buffat &amp; Matthieu Thomeer.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,928 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tp3_pkg package &mdash; Documentation Neural_Networks_TP3 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=05dadb3a"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="tp3_pkg" href="modules.html" />
+    <link rel="prev" title="Neural_Networks_TP3 documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Neural_Networks_TP3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tp3_pkg package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tp3_pkg.neurones">tp3_pkg.neurones module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork.Donnees"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.Données</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork.Gradients"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.Gradients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork.Autres"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.Autres</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork.__init__"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork.RunMain"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.RunMain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._read_data"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._read_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._sampling"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._sampling()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._norm"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._norm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._init_W_b"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._init_W_b()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._init_derivate"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._init_derivate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._ReLU"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._ReLU()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._softmax"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._softmax()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._prop_av"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._prop_av()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._dReLU_dz"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._dReLU_dz()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._value_to_array"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._value_to_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._prop_ar"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._prop_ar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._refresh_matrix"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._refresh_matrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._end_value"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._end_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._comparaison"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._comparaison()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._run_train"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._run_train()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._run_dev"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._run_dev()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork._plot_success"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork._plot_success()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork.__dict__"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.__dict__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork.__module__"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.__module__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork.__weakref__"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork.__weakref__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tp3_pkg.neurones_keras">tp3_pkg.neurones_keras module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.X_train"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.X_train</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_train"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Y_train</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.X_test"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.X_test</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_test"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Y_test</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_train_arr"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Y_train_arr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_test_arr"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Y_test_arr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.model"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Adam"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Adam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.out"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.out</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.__init__"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._compile_data"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras._compile_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.RunMain"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.RunMain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run1"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Run1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run2"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Run2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run3"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Run3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run4"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Run4()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run5"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.Run5()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._import_data"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras._import_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._value_to_array"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras._value_to_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_1"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras._train_1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_2"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras._train_2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_3"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras._train_3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_4"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras._train_4()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_5"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras._train_5()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.PlotOut"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.PlotOut()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.__dict__"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.__dict__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.__module__"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.__module__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.__weakref__"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras.__weakref__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tp3_pkg">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">tp3_pkg</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tp3_pkg package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-tp3_pkg.neurones">tp3_pkg.neurones module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones.NeuralNetwork"><code class="docutils literal notranslate"><span class="pre">NeuralNetwork</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-tp3_pkg.neurones_keras">tp3_pkg.neurones_keras module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras"><code class="docutils literal notranslate"><span class="pre">NeuralNetworkKeras</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-tp3_pkg">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rep.html">Réponses aux questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Neural_Networks_TP3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">tp3_pkg package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tp3_pkg.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tp3-pkg-package">
+<h1>tp3_pkg package<a class="headerlink" href="#tp3-pkg-package" title="Lien vers cette rubrique"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Lien vers cette rubrique"></a></h2>
+</section>
+<section id="module-tp3_pkg.neurones">
+<span id="tp3-pkg-neurones-module"></span><h2>tp3_pkg.neurones module<a class="headerlink" href="#module-tp3_pkg.neurones" title="Lien vers cette rubrique"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tp3_pkg.neurones.</span></span><span class="sig-name descname"><span class="pre">NeuralNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork" title="Lien vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implémentation d’un réseau de neurones simple pour la classification avec rétropropagation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Variables</span> <span class="pre">d'entrainement</span></span></dt>
+<dd><dl class="simple">
+<dt>lambda_1<span class="classifier">float</span></dt><dd><p>Coefficient d’apprentissage initial.</p>
+</dd>
+<dt>lambda_2<span class="classifier">float</span></dt><dd><p>Coefficient d’apprentissage secondaire.</p>
+</dd>
+<dt>iterations<span class="classifier">int</span></dt><dd><p>Nombre d’itérations d’entraînement.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork.Donnees">
+<span class="sig-name descname"><span class="pre">Données</span></span><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork.Donnees" title="Lien vers cette définition"></a></dt>
+<dd><dl class="simple">
+<dt>data_numpy<span class="classifier">numpy.ndarray</span></dt><dd><p>Jeu de données chargé depuis un fichier CSV.</p>
+</dd>
+<dt>X_train<span class="classifier">numpy.ndarray</span></dt><dd><p>Données d’entraînement normalisées.</p>
+</dd>
+<dt>Y_train<span class="classifier">numpy.ndarray</span></dt><dd><p>Étiquettes des données d’entraînement.</p>
+</dd>
+<dt>X_dev<span class="classifier">numpy.ndarray</span></dt><dd><p>Données de validation normalisées.</p>
+</dd>
+<dt>Y_dev<span class="classifier">numpy.ndarray</span></dt><dd><p>Étiquettes des données de validation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Paramètres</span> <span class="pre">du</span> <span class="pre">réseau</span></span></dt>
+<dd><dl class="simple">
+<dt>W0, W1<span class="classifier">numpy.ndarray</span></dt><dd><p>Matrices de poids pour chaque couche.</p>
+</dd>
+<dt>b0, b1<span class="classifier">numpy.ndarray</span></dt><dd><p>Vecteurs de biais pour chaque couche.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork.Gradients">
+<span class="sig-name descname"><span class="pre">Gradients</span></span><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork.Gradients" title="Lien vers cette définition"></a></dt>
+<dd><dl class="simple">
+<dt>dJdW0, dJdW1<span class="classifier">numpy.ndarray</span></dt><dd><p>Gradients des poids pour la rétropropagation.</p>
+</dd>
+<dt>dJdb0, dJdb1<span class="classifier">numpy.ndarray</span></dt><dd><p>Gradients des biais pour la rétropropagation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork.Autres">
+<span class="sig-name descname"><span class="pre">Autres</span></span><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork.Autres" title="Lien vers cette définition"></a></dt>
+<dd><dl class="simple">
+<dt>rep<span class="classifier">list</span></dt><dd><p>Liste des prédictions du réseau.</p>
+</dd>
+<dt><a href="#id1"><span class="problematic" id="id2">success_</span></a><span class="classifier">list</span></dt><dd><p>Historique des précisions à chaque étape d’entraînement.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork.__init__" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork.RunMain">
+<span class="sig-name descname"><span class="pre">RunMain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork.RunMain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork.RunMain" title="Lien vers cette définition"></a></dt>
+<dd><p>Lance l’ensemble du processus : lecture des données, normalisation,
+initialisation des paramètres et entraînements (avec deux taux d’entrainement).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._read_data">
+<span class="sig-name descname"><span class="pre">_read_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._read_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._read_data" title="Lien vers cette définition"></a></dt>
+<dd><p>Lit les données d’entraînement depuis un fichier CSV et les convertit en tableaux NumPy.</p>
+<p>Cet appel mélange les données pour garantir une distribution aléatoire.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._sampling">
+<span class="sig-name descname"><span class="pre">_sampling</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._sampling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._sampling" title="Lien vers cette définition"></a></dt>
+<dd><p>Sépare les données en deux ensembles :
+- Échantillon de validation (X_dev, Y_dev)
+- Échantillon d’entraînement (X_train, Y_train)</p>
+<p>Cela utilise les 1000 premiers exemples pour la validation et le reste pour l’entraînement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._norm">
+<span class="sig-name descname"><span class="pre">_norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._norm" title="Lien vers cette définition"></a></dt>
+<dd><p>Normalise les caractéristiques (X) en divisant chaque valeur par 255
+pour s’assurer que toutes les caractéristiques se situent entre 0 et 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._init_W_b">
+<span class="sig-name descname"><span class="pre">_init_W_b</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._init_W_b"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._init_W_b" title="Lien vers cette définition"></a></dt>
+<dd><p>Initialise les poids et biais pour le réseau de neurones avec des valeurs aléatoires
+entre -0.5 et 0.5.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._init_derivate">
+<span class="sig-name descname"><span class="pre">_init_derivate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._init_derivate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._init_derivate" title="Lien vers cette définition"></a></dt>
+<dd><p>Initialise les matrices de dérivées à zéro pour les poids et biais
+du réseau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._ReLU">
+<span class="sig-name descname"><span class="pre">_ReLU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._ReLU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._ReLU" title="Lien vers cette définition"></a></dt>
+<dd><p>Applique la fonction d’activation ReLU à un tableau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Z</strong> (<em>numpy.ndarray</em>) – Entrée pour la fonction d’activation.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sortie après application de ReLU.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._softmax">
+<span class="sig-name descname"><span class="pre">_softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._softmax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._softmax" title="Lien vers cette définition"></a></dt>
+<dd><p>Applique une fonction softmax à l’entrée.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Z</strong> (<em>numpy.ndarray</em>) – Vecteur contenant les valeurs d’entrée.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Vecteur après application de softmax.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._prop_av">
+<span class="sig-name descname"><span class="pre">_prop_av</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._prop_av"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._prop_av" title="Lien vers cette définition"></a></dt>
+<dd><p>Effectue une propagation en avant à travers le réseau pour une seule entrée.
+Le vecteur A1 est le vecteur de réponse, l’indice qui a la plus grande valeur associée est considérée comme la réponse du réseau de neurones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X_i</strong> (<em>numpy.ndarray</em>) – Exemples d’entrée pour le réseau.</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._dReLU_dz">
+<span class="sig-name descname"><span class="pre">_dReLU_dz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Z</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._dReLU_dz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._dReLU_dz" title="Lien vers cette définition"></a></dt>
+<dd><p>Calcule la dérivée de ReLU par rapport à Z en retournant 1 pour les
+valeurs positives, et 0 pour les valeurs négatives.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Z</strong> (<em>numpy.ndarray</em>) – Entrée pour laquelle calculer la dérivée.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dérivée de ReLU évaluée point par point.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._value_to_array">
+<span class="sig-name descname"><span class="pre">_value_to_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Y_i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._value_to_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._value_to_array" title="Lien vers cette définition"></a></dt>
+<dd><p>Convertit une valeur Y en tableau encodé unilatéral.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Y_i</strong> (<em>int</em>) – Valeur cible à encoder.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tableau de longueur 10 avec un seul « 1 » au bon indice.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._prop_ar">
+<span class="sig-name descname"><span class="pre">_prop_ar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y_i</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._prop_ar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._prop_ar" title="Lien vers cette définition"></a></dt>
+<dd><p>Effectue une rétropropagation pour calculer les gradients des poids et biais
+en utilisant les erreurs entre la sortie prédite et la cible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X_i</strong> (<em>numpy.ndarray</em>) – Exemple d’entrée utilisé pour la rétropropagation.</p></li>
+<li><p><strong>Y_i</strong> (<em>int</em>) – Étiquette de classe réelle pour l’entrée X_i.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._refresh_matrix">
+<span class="sig-name descname"><span class="pre">_refresh_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._refresh_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._refresh_matrix" title="Lien vers cette définition"></a></dt>
+<dd><p>Met à jour les poids et les biais avec les gradients calculés via rétropropagation,
+appliquant la descente de gradient stochastique.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lambda</strong> (<em>float</em>) – Coefficient d’apprentissage utilisé pour ajuster les paramètres.</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._end_value">
+<span class="sig-name descname"><span class="pre">_end_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._end_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._end_value" title="Lien vers cette définition"></a></dt>
+<dd><p>Détermine la classe prédite en prenant l’indice de la valeur maximale du vecteur de sortie.</p>
+<p>Une fois déterminée, la classe prédite est ajoutée à la liste des réponses du réseau.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._comparaison">
+<span class="sig-name descname"><span class="pre">_comparaison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._comparaison"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._comparaison" title="Lien vers cette définition"></a></dt>
+<dd><p>Compare les prédictions du réseau avec les véritables étiquettes pour calculer la précision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>use</strong> (<em>str</em>) – Indique quel ensemble de données utiliser : “train” pour l’entraînement
+ou tout autre valeur pour la validation.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Le pourcentage de détections correctes.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._run_train">
+<span class="sig-name descname"><span class="pre">_run_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lambda_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._run_train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._run_train" title="Lien vers cette définition"></a></dt>
+<dd><p>Entraîne le réseau de neurones sur l’ensemble des données d’entraînement
+en utilisant la rétropropagation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lambda</strong> (<em>float</em>) – Coefficient d’apprentissage utilisé pour la mise à jour des poids
+et des biais.</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._run_dev">
+<span class="sig-name descname"><span class="pre">_run_dev</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._run_dev"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._run_dev" title="Lien vers cette définition"></a></dt>
+<dd><p>Effectue la validation du réseau de neurones sur l’ensemble des données de validation.</p>
+<p>Cette méthode applique une propagation avant pour chaque exemple, compare les
+prédictions générées avec les étiquettes réelles et affiche la précision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork._plot_success">
+<span class="sig-name descname"><span class="pre">_plot_success</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones.html#NeuralNetwork._plot_success"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork._plot_success" title="Lien vers cette définition"></a></dt>
+<dd><p>Trace le taux de succès en fonction des itérations d’entraînement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'tp3_pkg.neurones',</span> <span class="pre">'__doc__':</span> <span class="pre">&quot;\n</span>&#160;&#160;&#160; <span class="pre">Implémentation</span> <span class="pre">d'un</span> <span class="pre">réseau</span> <span class="pre">de</span> <span class="pre">neurones</span> <span class="pre">simple</span> <span class="pre">pour</span> <span class="pre">la</span> <span class="pre">classification</span> <span class="pre">avec</span> <span class="pre">rétropropagation.\n\n</span>&#160;&#160;&#160; <span class="pre">Attributes\n</span>&#160;&#160;&#160; <span class="pre">----------\n</span>&#160;&#160;&#160; <span class="pre">Variables</span> <span class="pre">d'entrainement</span> <span class="pre">:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">lambda_1</span> <span class="pre">:</span> <span class="pre">float\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Coefficient</span> <span class="pre">d'apprentissage</span> <span class="pre">initial.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">lambda_2</span> <span class="pre">:</span> <span class="pre">float\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Coefficient</span> <span class="pre">d'apprentissage</span> <span class="pre">secondaire.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">iterations</span> <span class="pre">:</span> <span class="pre">int\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Nombre</span> <span class="pre">d'itérations</span> <span class="pre">d'entraînement.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Données</span> <span class="pre">:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">data_numpy</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Jeu</span> <span class="pre">de</span> <span class="pre">données</span> <span class="pre">chargé</span> <span class="pre">depuis</span> <span class="pre">un</span> <span class="pre">fichier</span> <span class="pre">CSV.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">X_train</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Données</span> <span class="pre">d'entraînement</span> <span class="pre">normalisées.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Y_train</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Étiquettes</span> <span class="pre">des</span> <span class="pre">données</span> <span class="pre">d'entraînement.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">X_dev</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Données</span> <span class="pre">de</span> <span class="pre">validation</span> <span class="pre">normalisées.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Y_dev</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Étiquettes</span> <span class="pre">des</span> <span class="pre">données</span> <span class="pre">de</span> <span class="pre">validation.\n\n</span>&#160;&#160;&#160; <span class="pre">Paramètres</span> <span class="pre">du</span> <span class="pre">réseau</span> <span class="pre">:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">W0,</span> <span class="pre">W1</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Matrices</span> <span class="pre">de</span> <span class="pre">poids</span> <span class="pre">pour</span> <span class="pre">chaque</span> <span class="pre">couche.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">b0,</span> <span class="pre">b1</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Vecteurs</span> <span class="pre">de</span> <span class="pre">biais</span> <span class="pre">pour</span> <span class="pre">chaque</span> <span class="pre">couche.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">Gradients</span> <span class="pre">:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">dJdW0,</span> <span class="pre">dJdW1</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Gradients</span> <span class="pre">des</span> <span class="pre">poids</span> <span class="pre">pour</span> <span class="pre">la</span> <span class="pre">rétropropagation.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">dJdb0,</span> <span class="pre">dJdb1</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Gradients</span> <span class="pre">des</span> <span class="pre">biais</span> <span class="pre">pour</span> <span class="pre">la</span> <span class="pre">rétropropagation.\n\n</span>&#160;&#160;&#160; <span class="pre">Autres</span> <span class="pre">:\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">rep</span> <span class="pre">:</span> <span class="pre">list\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Liste</span> <span class="pre">des</span> <span class="pre">prédictions</span> <span class="pre">du</span> <span class="pre">réseau.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">success_</span> <span class="pre">:</span> <span class="pre">list\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Historique</span> <span class="pre">des</span> <span class="pre">précisions</span> <span class="pre">à</span> <span class="pre">chaque</span> <span class="pre">étape</span> <span class="pre">d'entraînement.\n</span>&#160;&#160;&#160; <span class="pre">&quot;,</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork.__init__&gt;,</span> <span class="pre">'RunMain':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork.RunMain&gt;,</span> <span class="pre">'_read_data':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._read_data&gt;,</span> <span class="pre">'_sampling':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._sampling&gt;,</span> <span class="pre">'_norm':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._norm&gt;,</span> <span class="pre">'_init_W_b':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._init_W_b&gt;,</span> <span class="pre">'_init_derivate':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._init_derivate&gt;,</span> <span class="pre">'_ReLU':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._ReLU&gt;,</span> <span class="pre">'_softmax':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._softmax&gt;,</span> <span class="pre">'_prop_av':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._prop_av&gt;,</span> <span class="pre">'_dReLU_dz':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._dReLU_dz&gt;,</span> <span class="pre">'_value_to_array':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._value_to_array&gt;,</span> <span class="pre">'_prop_ar':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._prop_ar&gt;,</span> <span class="pre">'_refresh_matrix':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._refresh_matrix&gt;,</span> <span class="pre">'_end_value':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._end_value&gt;,</span> <span class="pre">'_comparaison':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._comparaison&gt;,</span> <span class="pre">'_run_train':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._run_train&gt;,</span> <span class="pre">'_run_dev':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._run_dev&gt;,</span> <span class="pre">'_plot_success':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetwork._plot_success&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'NeuralNetwork'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'NeuralNetwork'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork.__dict__" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tp3_pkg.neurones'</span></em><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork.__module__" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones.NeuralNetwork.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#tp3_pkg.neurones.NeuralNetwork.__weakref__" title="Lien vers cette définition"></a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tp3_pkg.neurones_keras">
+<span id="tp3-pkg-neurones-keras-module"></span><h2>tp3_pkg.neurones_keras module<a class="headerlink" href="#module-tp3_pkg.neurones_keras" title="Lien vers cette rubrique"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">tp3_pkg.neurones_keras.</span></span><span class="sig-name descname"><span class="pre">NeuralNetworkKeras</span></span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras" title="Lien vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe pour entraîner et évaluer des réseaux de neurones sur le jeu de données MNIST
+en utilisant Keras.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.X_train">
+<span class="sig-name descname"><span class="pre">X_train</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.X_train" title="Lien vers cette définition"></a></dt>
+<dd><p>Données d’entraînement normalisées.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_train">
+<span class="sig-name descname"><span class="pre">Y_train</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_train" title="Lien vers cette définition"></a></dt>
+<dd><p>Étiquettes des données d’entraînement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.X_test">
+<span class="sig-name descname"><span class="pre">X_test</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.X_test" title="Lien vers cette définition"></a></dt>
+<dd><p>Données de test normalisées.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_test">
+<span class="sig-name descname"><span class="pre">Y_test</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_test" title="Lien vers cette définition"></a></dt>
+<dd><p>Étiquettes des données de test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_train_arr">
+<span class="sig-name descname"><span class="pre">Y_train_arr</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_train_arr" title="Lien vers cette définition"></a></dt>
+<dd><p>Étiquettes d’entraînement en one-hot encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_test_arr">
+<span class="sig-name descname"><span class="pre">Y_test_arr</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Y_test_arr" title="Lien vers cette définition"></a></dt>
+<dd><p>Étiquettes de test en one-hot encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.model" title="Lien vers cette définition"></a></dt>
+<dd><p>Modèle de réseau de neurones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>keras.models.Sequential</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Adam">
+<span class="sig-name descname"><span class="pre">Adam</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Adam" title="Lien vers cette définition"></a></dt>
+<dd><p>Optimiseur Adam.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>keras.optimizers.Adam</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.out">
+<span class="sig-name descname"><span class="pre">out</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.out" title="Lien vers cette définition"></a></dt>
+<dd><p>Historique de l’entraînement du modèle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>keras.callbacks.History</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.__init__" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras._compile_data">
+<span class="sig-name descname"><span class="pre">_compile_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras._compile_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._compile_data" title="Lien vers cette définition"></a></dt>
+<dd><p>Compile les données d’entraînement et de test en important et en convertissant
+les valeurs des étiquettes en one-hot encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.RunMain">
+<span class="sig-name descname"><span class="pre">RunMain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras.RunMain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.RunMain" title="Lien vers cette définition"></a></dt>
+<dd><p>Lance les différents modèles les uns à la suite des autres.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Run1">
+<span class="sig-name descname"><span class="pre">Run1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras.Run1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run1" title="Lien vers cette définition"></a></dt>
+<dd><p>Lance le premier modèle d’entrainement du réseau de neurones.
+L’intérêt est de pouvoir choisir quel modèle on veut utiliser. Cela permet d’éviter de sur-utiliser la RAM.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Run2">
+<span class="sig-name descname"><span class="pre">Run2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras.Run2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run2" title="Lien vers cette définition"></a></dt>
+<dd><p>Lance le second modèle d’entrainement du réseau de neurones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Run3">
+<span class="sig-name descname"><span class="pre">Run3</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras.Run3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run3" title="Lien vers cette définition"></a></dt>
+<dd><p>Lance le troisième modèle d’entrainement du réseau de neurones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Run4">
+<span class="sig-name descname"><span class="pre">Run4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras.Run4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run4" title="Lien vers cette définition"></a></dt>
+<dd><p>Lance le quatrième modèle d’entrainement du réseau de neurones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.Run5">
+<span class="sig-name descname"><span class="pre">Run5</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras.Run5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.Run5" title="Lien vers cette définition"></a></dt>
+<dd><p>Lance le cinquième modèle d’entrainement du réseau de neurones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras._import_data">
+<span class="sig-name descname"><span class="pre">_import_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras._import_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._import_data" title="Lien vers cette définition"></a></dt>
+<dd><p>Importe et normalise le jeu de données MNIST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras._value_to_array">
+<span class="sig-name descname"><span class="pre">_value_to_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras._value_to_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._value_to_array" title="Lien vers cette définition"></a></dt>
+<dd><p>Convertit les étiquettes en one-hot encoding pour l’entraînement et le test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras._train_1">
+<span class="sig-name descname"><span class="pre">_train_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras._train_1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_1" title="Lien vers cette définition"></a></dt>
+<dd><p>Entraîne un modèle de réseau de neurones simple avec une couche dense.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em><em>, </em><em>optional</em>) – Nombre d’époques pour l’entraînement, par défaut 300.</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras._train_2">
+<span class="sig-name descname"><span class="pre">_train_2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras._train_2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_2" title="Lien vers cette définition"></a></dt>
+<dd><p>Entraîne un modèle de réseau de neurones avec un taux d’apprentissage différent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras._train_3">
+<span class="sig-name descname"><span class="pre">_train_3</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras._train_3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_3" title="Lien vers cette définition"></a></dt>
+<dd><p>Entraîne un modèle de réseau de neurones avec une architecture étendue.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras._train_4">
+<span class="sig-name descname"><span class="pre">_train_4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras._train_4"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_4" title="Lien vers cette définition"></a></dt>
+<dd><p>Entraîne un modèle avec deux couches cachées étendues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras._train_5">
+<span class="sig-name descname"><span class="pre">_train_5</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras._train_5"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras._train_5" title="Lien vers cette définition"></a></dt>
+<dd><p>Entraîne un modèle similaire au quatrième mais avec un lot de données plus petit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.PlotOut">
+<span class="sig-name descname"><span class="pre">PlotOut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tp3_pkg/neurones_keras.html#NeuralNetworkKeras.PlotOut"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.PlotOut" title="Lien vers cette définition"></a></dt>
+<dd><p>Trace les courbes d’apprentissage et de validation pour le modèle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tag</strong> (<em>str</em>) – Titre pour le graphique.</p>
+</dd>
+<dt class="field-even">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'tp3_pkg.neurones_keras',</span> <span class="pre">'__doc__':</span> <span class="pre">&quot;\n</span>&#160;&#160;&#160; <span class="pre">Classe</span> <span class="pre">pour</span> <span class="pre">entraîner</span> <span class="pre">et</span> <span class="pre">évaluer</span> <span class="pre">des</span> <span class="pre">réseaux</span> <span class="pre">de</span> <span class="pre">neurones</span> <span class="pre">sur</span> <span class="pre">le</span> <span class="pre">jeu</span> <span class="pre">de</span> <span class="pre">données</span> <span class="pre">MNIST</span> <span class="pre">\n</span>&#160;&#160;&#160; <span class="pre">en</span> <span class="pre">utilisant</span> <span class="pre">Keras.\n\n</span>&#160;&#160;&#160; <span class="pre">Attributes\n</span>&#160;&#160;&#160; <span class="pre">----------\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">X_train</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Données</span> <span class="pre">d'entraînement</span> <span class="pre">normalisées.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Y_train</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Étiquettes</span> <span class="pre">des</span> <span class="pre">données</span> <span class="pre">d'entraînement.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">X_test</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Données</span> <span class="pre">de</span> <span class="pre">test</span> <span class="pre">normalisées.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Y_test</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Étiquettes</span> <span class="pre">des</span> <span class="pre">données</span> <span class="pre">de</span> <span class="pre">test.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Y_train_arr</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Étiquettes</span> <span class="pre">d'entraînement</span> <span class="pre">en</span> <span class="pre">one-hot</span> <span class="pre">encoding.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Y_test_arr</span> <span class="pre">:</span> <span class="pre">numpy.ndarray\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Étiquettes</span> <span class="pre">de</span> <span class="pre">test</span> <span class="pre">en</span> <span class="pre">one-hot</span> <span class="pre">encoding.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">model</span> <span class="pre">:</span> <span class="pre">keras.models.Sequential\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Modèle</span> <span class="pre">de</span> <span class="pre">réseau</span> <span class="pre">de</span> <span class="pre">neurones.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Adam</span> <span class="pre">:</span> <span class="pre">keras.optimizers.Adam\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Optimiseur</span> <span class="pre">Adam.\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">out</span> <span class="pre">:</span> <span class="pre">keras.callbacks.History\n</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">Historique</span> <span class="pre">de</span> <span class="pre">l'entraînement</span> <span class="pre">du</span> <span class="pre">modèle.\n</span>&#160;&#160;&#160; <span class="pre">&quot;,</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras.__init__&gt;,</span> <span class="pre">'_compile_data':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras._compile_data&gt;,</span> <span class="pre">'RunMain':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras.RunMain&gt;,</span> <span class="pre">'Run1':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras.Run1&gt;,</span> <span class="pre">'Run2':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras.Run2&gt;,</span> <span class="pre">'Run3':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras.Run3&gt;,</span> <span class="pre">'Run4':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras.Run4&gt;,</span> <span class="pre">'Run5':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras.Run5&gt;,</span> <span class="pre">'_import_data':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras._import_data&gt;,</span> <span class="pre">'_value_to_array':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras._value_to_array&gt;,</span> <span class="pre">'_train_1':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras._train_1&gt;,</span> <span class="pre">'_train_2':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras._train_2&gt;,</span> <span class="pre">'_train_3':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras._train_3&gt;,</span> <span class="pre">'_train_4':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras._train_4&gt;,</span> <span class="pre">'_train_5':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras._train_5&gt;,</span> <span class="pre">'PlotOut':</span> <span class="pre">&lt;function</span> <span class="pre">NeuralNetworkKeras.PlotOut&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'NeuralNetworkKeras'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'NeuralNetworkKeras'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.__dict__" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'tp3_pkg.neurones_keras'</span></em><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.__module__" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="tp3_pkg.neurones_keras.NeuralNetworkKeras.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#tp3_pkg.neurones_keras.NeuralNetworkKeras.__weakref__" title="Lien vers cette définition"></a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-tp3_pkg">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-tp3_pkg" title="Lien vers cette rubrique"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="Neural_Networks_TP3 documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="tp3_pkg" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2025, Dimitri Buffat &amp; Matthieu Thomeer.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
